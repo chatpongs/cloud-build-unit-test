@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using UnityEngine.TestTools;
 using NUnit.Framework;
+using System.Collections;
 
-public class UnitTest : MonoBehaviour {
+public class UnitTest {
 
 	[Test]
-	public static void AlwaysPass() 
-    {
-        Assert.That(true);
+	public void AlwaysPass() 
+	{
+		Assert.That(true);
 	}
 }
