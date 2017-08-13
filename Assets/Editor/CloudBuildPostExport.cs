@@ -12,7 +12,7 @@ public class CloudBuildPostExport{
 		string platformDir = Path.Combine(assetbundleDir, Utility.GetPlatformName());
 		
 		Debug.Log("Start PostProessing");
-		BuildScript.BuildAssetBundles();
+		//BuildScript.BuildAssetBundles();
 
 		WWWForm form = new WWWForm();
 		form.AddField("platform", Utility.GetPlatformName());
