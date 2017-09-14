@@ -7,7 +7,7 @@ using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
 
 public static class FirebasePostProcess {
-	[PostProcessBuild]
+	[PostProcessBuildAttribute(2000)]
 	private static void ProcessPostBuild (BuildTarget buildTarget, string path)
 	{
 		// Only perform these steps for iOS builds
@@ -18,6 +18,7 @@ public static class FirebasePostProcess {
 		string target = project.TargetGuidByName(PBXProject.GetUnityTargetName());
 		
 		project.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
+		project.UpdateBuildProperty(target, "OTHER_LDFLAGS", new List<string>(){""}, new List<string>(){"-l\"z\"}"});
 		
 		File.WriteAllText(projPath, project.WriteToString());
 		#endif
